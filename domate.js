@@ -4,7 +4,7 @@
   var
     $,
     fns = {},
-    meta = ['0.0.1'],
+    meta = ['0.0.2'],
     slice = meta.slice,
     filter = meta.filter,
     concat = meta.concat,
