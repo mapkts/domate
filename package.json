@@ -1,0 +1,24 @@
+{
+  "name": "domate",
+  "version": "0.0.1",
+  "description": "A lightweight JavaScript library purely for DOM manipulation",
+  "main": "domate.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapkts/domate.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "DOM",
+    "Events",
+    "Library"
+  ],
+  "author": "Chris Lorne",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
