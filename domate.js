@@ -4,7 +4,7 @@
   var
     $,
     fns = {},
-    meta = ['0.0.1'],
+    meta = ['0.0.2'],
     slice = meta.slice,
     filter = meta.filter,
     concat = meta.concat,
@@ -17,7 +17,6 @@
     _$$ = window.$$,
     _Domate = window.Domate;
 
-  function noop() {}
   function type(obj) { return obj == null ? String(obj) : toString.call(obj).slice(8, -1).toLowerCase(); }
   function isNode(obj) { return !!obj && (obj.nodeType === 1 || obj.nodeType === 11 || obj.nodeType === 9); }
   function isElement(obj) { return !!obj && obj.nodeType === 1; }
@@ -786,7 +785,7 @@
       }
 
       if (deep && window.Owl === $) {
-        window.Owl = _Owl;
+        window.Domate = _Domate;
       }
 
       return $;
