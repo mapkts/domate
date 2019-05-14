@@ -4,7 +4,7 @@
   var
     $,
     fns = {},
-    meta = ['0.0.2'],
+    meta = ['0.0.3'],
     slice = meta.slice,
     filter = meta.filter,
     concat = meta.concat,
@@ -775,7 +775,7 @@
     /**
      * Release control of the $ and $$ variable
      *
-     * @param {Boolean} boolean True to release $, $$ and Owl itself
+     * @param {Boolean} boolean True to release $, $$ and Domate itself
      * @return {Domate} Domate
      */
     noConflict: function (deep) {
@@ -784,7 +784,7 @@
         window.$$ = _$$;
       }
 
-      if (deep && window.Owl === $) {
+      if (deep && window.Domate === $) {
         window.Domate = _Domate;
       }
 
