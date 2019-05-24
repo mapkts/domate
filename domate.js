@@ -3,12 +3,12 @@
 
   var
     $,
-    fns = {},
-    meta = ['0.0.3'],
-    slice = meta.slice,
-    filter = meta.filter,
-    concat = meta.concat,
-    toString = fns.toString,
+    obj = {},
+    arr = [],
+    slice = arr.slice,
+    filter = arr.filter,
+    concat = arr.concat,
+    toString = obj.toString,
     getProto = Object.getPrototypeOf;
 
   // Store previous $, $$ and Domate in case of overwrite
@@ -182,10 +182,7 @@
 
   extend($, {
     // Stand-alone utility functions
-    utils: fns,
-
-    // Current version
-    version: meta[0],
+    utils: {},
 
     /**
      * A wrapper function of native querySelectorAll
