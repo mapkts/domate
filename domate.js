@@ -56,7 +56,7 @@
   function map(callback, arr) {
     var i = -1;
     var len = arr.length;
-    var ret = new Array(l);
+    var ret = new Array(len);
 
     while (++i < len) {
       ret[i] = callback(arr[i], i, arr);
@@ -68,9 +68,8 @@
   function extend() {
     var options, src, copy, clone;
     var target = arguments[0] || {};
-    var source = {};
     var i = 0;
-    var l = arguments.length;
+    var len = arguments.length;
     var deep = false;
 
 
@@ -81,17 +80,18 @@
       i++;
     }
 
-    while (++i < l) {
+    while (++i < len) {
       if ((options = arguments[i]) != null) {
         for (name in options) {
           src = target[name];
           copy = options[name];
 
+          // Prevent Object.prototype pollution
           // Prevent never-ending loop
-          if (target === copy) continue;
+          if (name === "__proto__" || target === copy) continue;
 
-          if (deep & copy & isPlainObject(copy)) {
-            clone = src & isPlainObject(src) ? src : {};
+          if (deep && copy && isPlainObject(copy)) {
+            clone = src && isPlainObject(src) ? src : {};
 
             target[name] = extend(deep, clone, copy);
 
